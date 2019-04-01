@@ -1,0 +1,80 @@
+<%= render 'header' %>
+<div class="container">
+  <div class="question-board">
+    <h3>
+      タイトル: <%= @question.title %>?
+    </h3>
+    <p>
+      名前: <%= @question.name %>
+    </p>
+    <p>
+      内容: <%= @question.content %>
+    </p>
+  </div>
+
+  <hr>
+
+  <div class="answer-board">
+    <h3>回答一覧</h3>
+    <table>
+      <% if @question.answers.any? %>
+        <thead>
+          <tr>
+            <td>名前</td>
+            <td>メニュー</td>
+            <td>回答</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% @question.answers.each do |answer| %>
+          <tr>
+            <td>
+              <%= answer.name %>
+            </td>
+            <td>
+              [ <%= link_to '編集',  edit_question_answer_path(@question,answer) %> ]
+              [ <%= link_to '削除', question_answer_path(@question,answer),
+                method: :delete, data:{ confirm: '本当に削除しますか?'} %> ]
+            </td>
+            <td>
+              <%= answer.content %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      <% else %>
+        <p>回答ナシ</p>
+      <% end %>
+    </table>
+    <div class="paginate-area">
+      <%= paginate @answers %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="answer-area">
+    <h3>回答する</h3>
+
+    <%= form_with model: [@question,@answer], local: true do |f| %>
+    <%= f.hidden_field :question_id, { value: @question.id} %>
+
+    <div class="form-group">
+      <%= f.text_field :name, class: 'form-control', placeholder: '名前' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_area :content, class: 'form-control', placeholder: '内容' %>
+    </div>
+
+    <div class="text-center">
+      <%= f.submit "POST", class: 'btn-answer' %>
+    </div>
+
+    <% end %>
+
+  </div>
+
+  <div class="home"><%= link_to '> ホーム', root_path %></div>
+
+</div>

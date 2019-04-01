@@ -1,0 +1,19 @@
+<div class="container answer-edit-page">
+  <h2>回答を編集する</h2>
+  <%= form_with model:[@question, @answer], class: 'form', local: true do |f| %>
+  <div class="form-group">
+    <div class="form-group">
+      <label>名前</label>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <label>内容</label>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <div class="text-center">
+      <%= f.submit "更新", class: "btn btn-primary" %>
+    </div>
+  </div>
+  <% end %>
+  <div class="home"><%= link_to '> ホーム', root_path %></div>
+</div>

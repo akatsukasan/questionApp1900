@@ -1,0 +1,29 @@
+    <%= render 'header' %>
+    <div class="container">
+    <% render 'message' %>
+    <h2>質問一覧</h2>
+          <table>
+            <thead class="thead-light">
+              <tr>
+                <th>質問ID</th>
+                <th>タイトル</th>
+                <th>メニュー</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @questions.each do |question| %>
+                <tr>
+                  <td><%= question.id %></td>
+                  <td><%= link_to question.title, question_path(question) %></td>
+                  <td>[ <%= link_to '編集', edit_question_path(question) %> ] [ <%= link_to '削除', question_path(question), method: :delete, data:{ confirm: '本当に削除しますか？' } %> ]</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <div class="paginate-area">
+            <%= paginate @questions %>
+          </div>
+          <div class="new-btn">
+            <%= link_to '質問する', new_question_path %>
+          </div>
+    </div>
