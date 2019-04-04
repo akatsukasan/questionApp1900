@@ -132,6 +132,22 @@ a:hover {
   text-align: center;
 }
 
+.msg-slide p {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 80px;
+  color: rgb(66, 241, 131);
+}
+
+.msg-slide-error p {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 80px;
+  color: rgb(214, 4, 4);
+}
+
 
 /* 入力フォーム */
 .form{

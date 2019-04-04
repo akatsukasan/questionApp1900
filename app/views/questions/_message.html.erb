@@ -1,6 +1,10 @@
 <% if flash[:notice] %>
-<p><%= flash[:notice] %></p>
+<div class="msg-slide">
+  <p id="js-show-msg" style="display:none;"><%= flash[:notice] %></p>
+</div>
 <% end %>
 <% if flash[:alert] %>
-<p><%= flash[:alert] %></p>
+<div class="msg-slide-error">
+  <p id="js-show-msg" style="display:none;"><%= flash[:alert] %></p>
+</div>
 <% end %>
