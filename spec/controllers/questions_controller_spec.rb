@@ -161,16 +161,7 @@ RSpec.describe QuestionsController do
   #     end
   #
   #   end
-  # 
-  #   context '要求されたquestionが存在しない場合' do
-  #     it 'リクエストはRecordNotFoundになること' do
-  #       expect{
-  #           patch :update, params: { id: 00000 }
-  #        }.to raise_exception(ActiveRecord::RecordNotFound)
-  #     end
-  #   end
-  #
-  # end
+
 
   describe 'DELETE #destroy' do
     before do
