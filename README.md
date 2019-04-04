@@ -1,24 +1,17 @@
-# README
+# 質問投稿アプリ
+HTML , CSS , Ruby on rails を使用して質問投稿アプリを作成しました
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+実装した主な機能は以下の通りです
 
-Things you may want to cover:
+・質問投稿機能<br>
+・質問編集機能<br>
+・質問削除機能<br>
+・質問一覧表示機能<br>
+・回答投稿機能<br>
+・回答編集機能<br>
+・回答削除機能<br>
+・回答一覧表示機能<br>
+・ページング機能<br>
+・Rspecでテスト実装<br>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+アプリはherokuを使って公開しております。Rspecでmodel,controllerのテストを一応書いております。
