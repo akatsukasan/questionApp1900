@@ -1,5 +1,5 @@
 # 質問投稿アプリ
-HTML , CSS , Ruby on rails を使用して質問投稿アプリを作成しました
+HTML , CSS , jQuery, Ruby on rails を使用して質問投稿アプリを作成しました
 
 実装した主な機能は以下の通りです
 
